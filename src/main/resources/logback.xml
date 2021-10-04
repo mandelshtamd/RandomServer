@@ -1,0 +1,15 @@
+<configuration>
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>generatedData.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{YYYY-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="trace">
+        <appender-ref ref="FILE"/>
+    </root>
+    <logger name="ResponseLogger" level="INFO"/>
+    <logger name="io.netty" level="OFF"/>
+    <logger name="ktor.application" level="OFF"/>
+</configuration>
