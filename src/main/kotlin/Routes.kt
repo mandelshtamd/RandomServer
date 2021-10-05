@@ -27,7 +27,7 @@ fun Route.styles() {
                 borderBottom = "1px solid black"
             }
             rule("form") {
-                width = LinearDimension("400px")
+                width = LinearDimension("300px")
                 padding = "2em"
                 border = "1px solid #CCC"
                 borderRadius = LinearDimension("1em")
@@ -52,6 +52,7 @@ fun Route.styles() {
                 color = Color("white")
                 border = "none"
                 padding = "5px 11px"
+                marginTop = LinearDimension("10px")
                 display = Display.inlineBlock
                 fontSize = LinearDimension("16px")
                 borderRadius = LinearDimension("8px")
@@ -137,7 +138,7 @@ fun Route.generalPage() {
                     }
                 }
                 p {
-                    +"Also you can look at responses history by "
+                    +"Also you can look at Response history by "
                     a(href= "/history") { +"clicking here" }
                 }
             }
