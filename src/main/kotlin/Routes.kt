@@ -111,7 +111,6 @@ fun Route.generalPage() {
                             placeholder = "write lower bound"
                             type = InputType.text
                             required = true
-                            max = "2147483646"
                             autoComplete = false
                         }
 
@@ -126,7 +125,6 @@ fun Route.generalPage() {
                             placeholder = "write upper bound"
                             type = InputType.text
                             required = true
-                            max = "2147483646"
                             autoComplete = false
                         }
 
@@ -150,8 +148,8 @@ fun Route.generalPage() {
 fun Route.numberPage() {
     post("/number") {
         val params = call.receiveParameters()
-        val leftBound = params["leftBound"]?.toInt()
-        val rightBound = params["rightBound"]?.toInt()
+        val leftBound = params["leftBound"]?.toIntOrNull()
+        val rightBound = params["rightBound"]?.toIntOrNull()
 
         if (leftBound != null && rightBound != null) {
             if (leftBound > rightBound) call.respondText("Oops, left bound was bigger than right bound :(")
@@ -170,7 +168,7 @@ fun Route.numberPage() {
 fun Route.stringPage() {
     post("/string") {
         val params = call.receiveParameters()
-        val size = params["size"]?.toInt()
+        val size = params["size"]?.toIntOrNull()
 
         if (size != null) {
             val randomString = getRandomString(size)
